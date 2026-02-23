@@ -1,0 +1,1 @@
+{\n    "require": {\n        "php": "^7.4",\n        "symfony/http-foundation": "^5.4",\n        "symfony/routing": "^5.4",\n        "symfony/console": "^5.4",\n        "phpmailer/phpmailer": "^6.5",\n        "setasign/fpdf": "^1.8",\n        "doctrine/orm": "^2.10",\n        "doctrine/dbal": "^3.2"\n    }\n}
