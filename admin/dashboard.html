@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        .sidebar {
+            height: 100%;
+            padding: 15px;
+            background: #343a40;
+            color: #fff;
+        }
+        .main-content {
+            padding: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="d-flex">
+        <div class="sidebar">
+            <h4>Admin Panel</h4>
+            <ul class="nav flex-column">
+                <li class="nav-item"><a class="nav-link text-white" href="#">Dashboard</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Users</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Transactions</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Settings</a></li>
+                <li class="nav-item"><a class="nav-link text-white" href="#">Logout</a></li>
+            </ul>
+        </div>
+        <div class="main-content">
+            <h2>Dashboard</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="card bg-primary text-white mb-4">
+                        <div class="card-body">Total Users: 150</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-success text-white mb-4">
+                        <div class="card-body">Total Transactions: 200</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-warning text-white mb-4">
+                        <div class="card-body">Pending Orders: 5</div>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="card bg-danger text-white mb-4">
+                        <div class="card-body">Revenue: $5000</div>
+                    </div>
+                </div>
+            </div>
+            <h3>Recent Transactions</h3>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>User</th>
+                        <th>Amount</th>
+                        <th>Date</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>John Doe</td>
+                        <td>$100</td>
+                        <td>2026-02-20</td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Jane Smith</td>
+                        <td>$150</td>
+                        <td>2026-02-21</td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Jim Brown</td>
+                        <td>$50</td>
+                        <td>2026-02-22</td>
+                    </tr>
+                </tbody>
+            </table>
+            <h3>Statistics Chart</h3>
+            <canvas id="myChart" width="400" height="200"></canvas>
+            <script>
+                const ctx = document.getElementById('myChart').getContext('2d');
+                const myChart = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul'],
+                        datasets: [{
+                            label: 'Monthly Revenue',
+                            data: [1200, 1900, 3000, 5000, 2000, 3500, 3000],
+                            borderColor: 'rgba(75, 192, 192, 1)',
+                            backgroundColor: 'rgba(75, 192, 192, 0.2)',
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true
+                            }
+                        }
+                    }
+                });
+            </script>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
